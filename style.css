@@ -1,0 +1,192 @@
+:root{
+    --deep: #020024;
+    --navy: #1F1032;
+    --purple: #2E1A47;
+    --bright-purple: #6C3BFF;
+    --gold: #D4AF37;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{ 
+    scroll-behavior: smooth; 
+}
+
+body{
+    background-color: var(--deep);
+    overflow-x: hidden;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- NavBar --- */
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 15px;
+    z-index: 1;
+}
+
+nav::before{
+    content: '';
+    position: absolute;
+    inset: 0; /* faz ocupar toda a navbar */
+    background-color: var(--deep);
+    opacity: 1;
+    z-index: -1;
+}
+
+nav ol li{
+    list-style: none;
+    color: white;
+    font-size: 0.8rem;
+}
+
+nav ol{
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    gap: 5rem;
+}
+
+nav h5{
+    font-size: 2rem;
+    color: var(--gold);
+}
+
+/* --- Span --- */
+.citacao{
+    background-color: var(--purple);
+    color: var(--gold);
+    border-radius: 30px;
+    letter-spacing: 0.09rem;
+    padding: 0.8rem;
+    margin: 2rem;
+    font-size: 0.9rem;
+}
+
+.citacao::before{
+    content: '✦';
+    padding-right: 0.5rem;
+}
+
+.citacao-info{
+    letter-spacing: 0.09rem;
+    padding: 0.8rem;
+    font-size: 0.8rem;
+    color: var(--gold);
+}
+
+.citacao-info::before{
+    content: '✦';
+    padding-right: 0.5rem;
+}
+
+/* --- Botoes --- */
+.btn{
+    font-size: 0.7rem;
+    padding: 1rem 1.7rem;
+    border-radius: 35px;
+    border: 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: -4px 4px 7.2px rgba(0, 0, 0, 0.25);
+}
+
+.btn-principal{
+    background-color: var(--gold);
+    color: var(--deep);
+}
+
+.btn-default{
+    background-color: var(--navy);
+    color: var(--gold);
+}
+
+/* --- Secoes --- */
+
+section{
+    min-height: 100vh;
+}
+
+h2{
+    font-size: 5rem;
+    color: var(--gold);
+}
+
+/*HOME*/
+.home{
+background:
+  radial-gradient(ellipse 90% 80% at 25% 45%,
+    rgba(108,59,255,0.45) 0%, rgba(108,59,255,0.12) 45%,
+    rgba(108,59,255,0.03) 68%, transparent 85%),
+  radial-gradient(ellipse 80% 75% at 88% 80%,
+    rgba(108,59,255,0.38) 0%, rgba(108,59,255,0.10) 45%,
+    rgba(108,59,255,0.02) 68%, transparent 85%),
+  #020024;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1{
+    color: var(--gold);
+    font-size: 12rem;
+    line-height: 55%;
+    font-weight: 400;
+}
+
+/*SOBRE*/
+.section-sobre {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-sobre::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #1F1032;
+    clip-path: polygon(0 71%, 100% 37%, 100% 100%, 0% 100%);
+    z-index: 0;
+}
+
+.sobre {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+    gap: 20rem;
+}
+
+.sobre p{
+    font-size: 1.1rem;
+    color: white;
+    letter-spacing: 0.1rem;
+    text-align: justify;
+}
+
+.sobre .aurora{
+    font-size: 1.3rem;
+    color: var(--gold);
+}
