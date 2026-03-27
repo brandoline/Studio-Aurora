@@ -4,6 +4,8 @@
     --purple: #2E1A47;
     --bright-purple: #6C3BFF;
     --gold: #D4AF37;
+    --muted: #9490b8;
+    --cream: #f5eed8;
 }
 
 *{
@@ -23,6 +25,7 @@ body{
 
 main{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -67,7 +70,7 @@ nav h5{
 }
 
 /* --- Span --- */
-.citacao{
+.citacao, .citacao-flutuante{
     background-color: var(--purple);
     color: var(--gold);
     border-radius: 30px;
@@ -77,9 +80,32 @@ nav h5{
     font-size: 0.9rem;
 }
 
-.citacao::before{
+.citacao-flutuante{
+    letter-spacing: 0.2rem;
+    padding: 0.5rem 1.2rem;
+}
+
+.citacao::before, .citacao-info::before{
     content: '✦';
     padding-right: 0.5rem;
+}
+
+.cf-top-right, .cf-top, .cf-bottom-left{
+    position: absolute;
+}
+
+.cf-top-right{
+    bottom: 0;
+    right: 0;
+}
+
+.cf-top{
+    top: 0;
+}
+
+.cf-bottom-left{
+    bottom: 10;
+    left: 50;
 }
 
 .citacao-info{
@@ -87,11 +113,6 @@ nav h5{
     padding: 0.8rem;
     font-size: 0.8rem;
     color: var(--gold);
-}
-
-.citacao-info::before{
-    content: '✦';
-    padding-right: 0.5rem;
 }
 
 /* --- Botoes --- */
@@ -102,7 +123,13 @@ nav h5{
     border: 0;
     font-weight: 700;
     text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.6s ease;
     box-shadow: -4px 4px 7.2px rgba(0, 0, 0, 0.25);
+}
+
+.btn:hover{
+    transform: translateY(-5px);
 }
 
 .btn-principal{
@@ -111,7 +138,8 @@ nav h5{
 }
 
 .btn-default{
-    background-color: var(--navy);
+    background-color: transparent;
+    border: 1px solid var(--gold);
     color: var(--gold);
 }
 
@@ -150,6 +178,11 @@ h1{
     font-weight: 400;
 }
 
+.botoes{
+    display: flex;
+    gap: 2rem;
+}
+
 /*SOBRE*/
 .section-sobre {
     width: 100%;
@@ -171,22 +204,166 @@ h1{
 .sobre {
     width: 1200px;
     margin: 0 auto;
+    padding: 5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: relative;
     z-index: 1;
-    gap: 20rem;
+    gap: 15rem;
 }
 
 .sobre p{
     font-size: 1.1rem;
-    color: white;
     letter-spacing: 0.1rem;
     text-align: justify;
+    color: var(--cream);
+    opacity: 0.85;
 }
 
 .sobre .aurora{
     font-size: 1.3rem;
     color: var(--gold);
+}
+
+.sobre .citacao-info{
+    position: absolute;
+    top: 0;
+}
+
+.sobre-logo h1{
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+}
+
+.titulo-aurora{
+    -webkit-text-stroke: 1px var(--gold);
+    color: transparent;
+    margin-left: 2rem;
+}
+
+/*SERVIÇOS*/
+.section-servicos{
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-servicos::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #1F1032;
+    clip-path: polygon(0 0%, 100% 0%, 100% 29%, 0% 63%);
+    z-index: 0;
+}
+
+.servicos{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+    gap: 15rem;
+}
+
+.cards{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+}
+
+.card{
+    background-color: var(--navy);
+    width: 30rem;
+    height: 15rem;
+    border: 1px solid var(--purple);
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: -4px 4px 7.2px rgba(0, 0, 0, 0.25);
+}
+
+.card-img{
+    width: 32px;
+    height: 32px;
+    margin-bottom: 2rem;
+}
+
+.card h3{
+    color: var(--gold);
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.card p{
+    font-size: 1rem;
+    color: var(--cream);
+    color: var(--muted);
+}
+
+.btn-portfolio{
+    background-color: var(--navy);
+    border: 10px solid var(--purple);
+    border-radius: 100px;
+    width: fit-content;
+    padding: 2.5rem 2.5rem;
+    font-size: 4rem;
+    font-weight: 600;
+    color: var(--gold);
+    cursor: pointer;
+    position: absolute;
+    right: -40px;
+    bottom: -50px;
+
+    transition: transform 0.6s ease;
+    box-shadow: -4px 4px 7.2px rgba(0, 0, 0, 0.25);
+}
+
+.btn-portfolio::before{
+    content: 'Clique aqui para ver o';
+    font-size: 0.9rem;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--purple);
+    display: flex;
+    justify-content: center;
+}
+
+.btn-portfolio:hover, .cta-WhatsApp:hover{
+    transform: translateY(-7px);
+    box-shadow: -4px 4px 7.2px rgba(247, 183, 6, 0.466);
+}
+
+/*CONTATO*/
+.contato{
+    width: 100%;
+}
+
+.contato h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+}
+
+.contato .cta-WhatsApp{
+    background-color: var(--gold);
+    padding: 1.5rem 2.5rem;
+    border: 0;
+    border-radius: 30px;
+    transition: transform 0.6s ease;
+    box-shadow: -4px 4px 7.2px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
 }
