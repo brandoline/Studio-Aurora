@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root{
     --deep: #020024;
     --navy: #1F1032;
@@ -6,6 +8,18 @@
     --gold: #D4AF37;
     --muted: #9490b8;
     --cream: #f5eed8;
+}
+
+h1, h2, h3, h4, h5{
+    font-family: "Playfair Display", serif !important;
+}
+
+p, ol li, ul li, a{
+    font-family: "Poppins", sans-serif !important;
+}
+
+a{
+    text-decoration: none;
 }
 
 *{
@@ -30,6 +44,28 @@ main{
     align-items: center;
 }
 
+.reveal{
+    opacity: 0;
+    transform: translateY(36px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Secoes --- */
+
+section{
+    min-height: 100vh;
+}
+
+h2{
+    font-size: 5rem;
+    color: var(--gold);
+}
+
 /* --- NavBar --- */
 
 nav{
@@ -51,13 +87,13 @@ nav::before{
     z-index: -1;
 }
 
-nav ol li{
+nav ul li{
     list-style: none;
     color: white;
     font-size: 0.8rem;
 }
 
-nav ol{
+nav ul{
     display: flex;
     flex-direction: row;
     cursor: pointer;
@@ -66,6 +102,14 @@ nav ol{
 
 nav h5{
     font-size: 2rem;
+    color: var(--gold);
+}
+
+nav ul li a{
+    color: var(--cream);
+}
+
+nav ul li a:hover, footer ul li a:hover{
     color: var(--gold);
 }
 
@@ -129,7 +173,7 @@ nav h5{
 }
 
 .btn:hover{
-    transform: translateY(-5px);
+    transform: scale(1.1);
 }
 
 .btn-principal{
@@ -140,17 +184,6 @@ nav h5{
 .btn-default{
     background-color: transparent;
     border: 1px solid var(--gold);
-    color: var(--gold);
-}
-
-/* --- Secoes --- */
-
-section{
-    min-height: 100vh;
-}
-
-h2{
-    font-size: 5rem;
     color: var(--gold);
 }
 
@@ -175,12 +208,32 @@ h1{
     color: var(--gold);
     font-size: 12rem;
     line-height: 55%;
-    font-weight: 400;
+    font-weight: bold;
+    margin-bottom: 1rem;
 }
 
 .botoes{
     display: flex;
     gap: 2rem;
+}
+
+.home .btn-default{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 1rem;
+    gap: 1rem;
+}
+
+.home .btn-default::after{
+    content: '';
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin-right: 1rem;
+    background-size: cover;
+    background-position: center;
+    background-image: url(./assets/IconArrowRight.svg);
 }
 
 /*SOBRE*/
@@ -241,6 +294,99 @@ h1{
     color: transparent;
     margin-left: 2rem;
 }
+
+/*PORTFOLIO*/
+.portfolio{
+    width: 1150px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.portfolio-titulo{
+    display: flex;
+    justify-content: center;
+}
+
+.portfolio h1{
+    margin: 4rem;
+    font-size: 7rem;
+    font-weight: 700;
+}
+
+.portfolio-grid{
+    display: grid;
+    width: fit-content;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 1.5rem;
+    column-gap: 4rem;
+    align-items: flex-start;
+}
+
+.portfolio-grid img{
+    transition: transform 0.6s ease;
+}
+
+.portfolio-grid img:hover{
+    transform: scale(1.05);
+}
+
+.gd-a{
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.gd-b{
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.gd-c{
+    grid-column: 2;
+    grid-row: 1/3;
+}
+
+.portfolio-grid img {
+    width: rem;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.btn-portfolio{
+    background-color: var(--gold);
+    border: 1px solid var(--gold);
+    border-radius: 100px;
+    width: fit-content;
+    padding: 2.5rem 2.5rem;
+    font-size: 4rem;
+    font-weight: 600;
+    color: var(--deep);
+    cursor: pointer;
+    position: absolute;
+    right: -50px;
+    bottom: 30px;
+
+    transition: transform 0.6s ease;
+    box-shadow: -4px 4px 7.2px rgba(0, 0, 0, 0.507);
+}
+
+.btn-portfolio::before{
+    content: 'Clique aqui para ver o';
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--purple);
+    display: flex;
+    justify-content: center;
+}
+
+.btn-portfolio:hover, .cta-WhatsApp:hover{
+    transform: scale(1.05);
+    box-shadow: -4px 4px 7.2px rgba(0, 0, 0, 0.507);
+}
+
 
 /*SERVIÇOS*/
 .section-servicos{
@@ -315,79 +461,9 @@ h1{
 }
 
 .card p{
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: var(--cream);
     color: var(--muted);
-}
-
-.btn-portfolio{
-    background-color: var(--gold);
-    border-radius: 100px;
-    width: fit-content;
-    padding: 2.5rem 2.5rem;
-    font-size: 4rem;
-    font-weight: 600;
-    color: var(--deep);
-    cursor: pointer;
-    position: absolute;
-    right: -40px;
-    bottom: -50px;
-
-    transition: transform 0.6s ease;
-    box-shadow: -4px 4px 7.2px rgba(0, 0, 0, 0.25);
-}
-
-.btn-portfolio::before{
-    content: 'Clique aqui para ver o';
-    font-size: 1rem;
-    font-style: italic;
-    font-weight: 400;
-    color: var(--purple);
-    display: flex;
-    justify-content: center;
-}
-
-.btn-portfolio:hover, .cta-WhatsApp:hover{
-    transform: translateY(-7px);
-    box-shadow: -4px 4px 7.2px rgba(247, 183, 6, 0.466);
-}
-
-/*PORTFOLIO*/
-.portfolio{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.portfolio img{
-    border: 2px solid blac;
-}
-
-.portfolio-grid{
-    grid-template-columns: repeat(2, fr);
-    grid-template-rows: repeat(2, fr);
-}
-
-.gd-a{
-    grid-column: 1;
-    grid-row: 1;
-}
-
-.gd-b{
-    grid-column: 1;
-    grid-row: 2;
-}
-
-.gd-c{
-    grid-column: 2/2;
-    grid-row: 2/2;
-}
-
-.grid-1-column{
-    width: 5rem;
-    border: 1px solid black;
 }
 
 /*CONTATO*/
@@ -407,7 +483,6 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 5rem;
     text-align: center;
     font-size: 7rem;
     font-weight: 700;
@@ -444,4 +519,131 @@ h1{
 
 .contato a:hover{
     color: var(--gold);
+}
+
+.contato-mensagem{
+    margin: 7rem;
+}
+
+.contato-cta{
+    color: var(--cream);
+}
+
+/*FOOTER*/
+footer{
+    background-color: #2E1A47;
+    width: 100%;
+    height: 17rem;
+    position: relative;
+    box-shadow: inset -4px 4px 7.2px rgba(0, 0, 0, 0.25);
+}
+
+.footer-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.footer-conteudo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 1rem;
+}
+
+.footer-sobre{
+    display: flex;
+    flex-direction: column;
+}
+
+footer h4{
+    color: var(--gold);
+    font-size: 1.5rem;
+}
+
+footer h5{
+    color: var(--gold);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+footer p{
+    color: var(--muted);
+    margin: 0.5rem;
+    margin-left: 0;
+}
+
+footer ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 0.2rem;
+}
+
+footer ul li a, footer ul li{
+    color: var(--muted);
+    text-decoration: none;
+}
+
+footer .footer-home{
+    display: flex;
+    width: 50%;
+    border: 2px solid var(--deep);
+    background-color: transparent;
+    color: var(--deep);
+    font-size: 1rem;
+    padding: 1rem 2rem;
+    margin: 1.5rem 1rem;
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-left: 0;
+    cursor: pointer;
+}
+
+footer .footer-home:before{
+    content: '';
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin-right: 1rem;
+    background-size: cover;
+    background-position: center;
+    background-image: url(./assets/IconArrowUp.svg);
+}
+
+footer .footer-home:hover{
+    box-shadow: -4px 4px 7.2px rgba(0, 0, 0, 0.096);
+}
+
+.footer-links{
+    display: flex;
+    margin: 0.5rem;
+    margin-bottom: 1rem;
+    gap: 1.2rem;
+}
+
+footer img{
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    padding: 0.2rem;
+}
+
+.direitos-autorais{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    opacity: 70%;
+    padding: 1rem;
+    position: absolute;
+    bottom: 0;
+    box-shadow: inset -4px 4px 7.2px rgba(0, 0, 0, 0.25);
+}
+
+footer span{
+    font-family: "Poppins", sans-serif !important;
+    color: var(--cream);
+    font-size: 0.8rem;
 }

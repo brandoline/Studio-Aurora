@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.png">
     <title>Studio Aurora</title>
+
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
 </head>
 <body>
         <nav>
@@ -12,27 +17,28 @@
                 <h5>Aurora</h5>
             </div>
             <div class="links">
-                <ol>
-                    <li>Home</li>
-                    <li>Sobre</li>
-                    <li>Galeria</li>
-                    <li>Serviços</li>
-                </ol>
+                <ul>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#galeria">Galeria</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
             </div>
         </nav>
-    <section class="home">
+    <section class="home" id="home">
             <h1>Studio</h1>
             <h1>Aurora</h1>
             <span class="citacao">Transformando ideias em experiências visuais únicas</span>
             <div class="botoes">
                 <button class="btn btn-principal">Entrar em contato</button>
-                <button class="btn btn-default">Conheça mais</button>
+                <button class="btn btn-default" onclick="window.location.href='#sobre'">Conheça mais</button>
             </div>
     </section>
     <main>
-    <section class="section-sobre">
+    <section class="section-sobre" id="sobre">
         <div class="sobre">
-            <div class="sobre-texto">
+            <div class="sobre-texto reveal">
                 <span class="citacao-info cf-top">Sobre</span>
                 <h2>Essência</h2>
                 <p>O <span class="aurora">Studio Aurora </span>nasceu com o propósito de transformar ideias em experiências visuais que realmente conectam marcas e pessoas.</p>
@@ -47,60 +53,114 @@
             <div class="sobre-logo">
                 <h1 class="titulo-studio">Stu<br></h1><h1 class="titulo-aurora">Aur<br></h1><h1>dio</h1>
                 <h1 class="titulo-aurora">ora</h1>
-                <span class="citacao-flutuante cf-top">Soluções</span>
-                <span class="citacao-flutuante cf-top-right">Estratégia</span>
-                <span class="citacao-flutuante cf-bottom-left">Comunicação</span>
+                <span class="citacao-flutuante cf-top reveal">Soluções</span>
+                <span class="citacao-flutuante cf-top-right reveal">Estratégia</span>
+                <span class="citacao-flutuante cf-bottom-left reveal">Comunicação</span>
             </div>
         </div>
     </section>
-    <section class="portfolio">
-        <h1>Portfólio</h1>
-        <div class="portfolio-grid">
-            <img src="" alt="exemplo1" class="grid-1-column gd-a">
-            <img src="" alt="exemplo2" class="grid-1-column gd-b">
-            <img src="" alt="exemplo3" class="grid-2-column gd-c">
-        </div>
+    <section class="portfolio" id="portfolio">
+        <article class="portfolio-titulo">
+            <h1>Portfólio</h1>
+        </article>
+            <div class="portfolio-grid">
+                <img src="./assets/MateriaisGraficos.png" alt="Materiais Graficos" class="grid-1-column gd-a reveal">
+                <img src="./assets/IdentidadeVisual.png" alt="Identidade Visual" class="grid-1-column gd-b reveal">
+                <img src="./assets/LandingPages.png" alt="Landing Pages" class="grid-2-column gd-c reveal">
+            </div>
+            <button class="btn-portfolio">Portfólio</button>
     </section>
-    <section class="section-servicos">
+    <section class="section-servicos" id="servicos">
         <div class="servicos">
             <div class="cards">
                 <span class="citacao-info cf-top">Serviços</span>
                     <div class="card-grid">
-                    <article class="card">
-                        <img src="" alt="" class="card-img">
+                    <article class="card reveal">
+                        <img src="" alt="Identidade Visual" class="card-img">
                         <h3>Identidade Visual</h3>
                         <p>Criação completa da identidade da marca, incluindo logotipo, paleta de cores, tipografia e elementos visuais de apoio. A ideia é entregar um material consistente que represente bem o negócio.</p>
                     </article>
-                    <article class="card">
-                        <img src="" alt="" class="card-img">
+                    <article class="card reveal">
+                        <img src="" alt="Materiais Gráficos" class="card-img">
                         <h3>Materiais Gráficos</h3>
                         <p>Criação de cartões de visita, banners, apresentações e outros materiais visuais necessários para comunicação da marca.</p>
                     </article>
-                    <article class="card">
-                        <img src="" alt="" class="card-img">
+                    <article class="card reveal">
+                        <img src="" alt="Criação de Landing Pages" class="card-img">
                         <h3>Criação de Landing Pages</h3>
                         <p>Criação completa da identidade da marca, incluindo logotipo, paleta de cores, tipografia e elementos visuais de apoio. A ideia é entregar um material consistente que represente bem o negócio.</p>
                     </article>
-                    <article class="card">
-                        <img src="" alt="" class="card-img">
+                    <article class="card reveal">
+                        <img src="" alt="Design para redes sociais" class="card-img">
                         <h3>Design para Redes Sociais</h3>
                         <p>Criação de artes para Instagram e outras redes, mantendo um padrão visual profissional e alinhado com a identidade da marca.</p>
                     </article>
                     </div>
             </div>
-            <button class="btn-portfolio">Portfólio</button>
         </div>
     </section>
-    <section class="contato">
+    <section class="contato" id="contato">
         <div class="citacoes">
             <span class="citacao-flutuante">Criatividade que vira identidade</span>
             <span class="citacao-flutuante">Estética com estratégia</span>
             <span class="citacao-flutuante">Conceito que se destaca</span>
         </div>
-        <h1>O impacto começa no visual, Entre em contato!</h1>
+        <div class="contato-mensagem reveal">
+            <h1>O impacto começa no visual,</h1>
+            <h1 class="contato-cta">Entre em contato!</h1>
+        </div>
         <button class="cta-WhatsApp"><img src="./assets/IconWhatsApp.svg" alt="Icon WhatsApp">Nos chame no WhatsApp</button>
         <a href="">AuroraStudio@email.com</a>
     </section>
     </main>
+    <footer>
+        <div class="footer-conteudo">
+            <article class="footer-sobre">
+                <h4>Aurora</h4>
+                <p>Design estratégico que comunica, posiciona e gera valor para sua marca.</p>
+                <div class="footer-links">
+                    <a href="#"><img src="./assets/IconLinkedin.svg" alt="Linkedin"></a>
+                    <a href="#"><img src="./assets/IconPinterest.svg" alt="Pinterest"></a>
+                    <a href="#"><img src="./assets/IconFigma.svg" alt="Figma"></a>
+                    <a href="#"><img src="./assets/IconInstagram.svg" alt="Instagram"></a>
+                </div>
+                <button class="footer-home" onclick="window.location.href='#home'">Volte ao topo</button>
+            </article>
+            <div class="footer-grid">
+            <article class="explore">
+                <h5>Explore</h5>
+                <ul>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#galeria">Galeria</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </article>
+            <article class="endereco">
+                <h5>Contato</h5>
+                <ul>
+                    <li>aurora@gmail.com</li>
+                    <li>BR. Az1, localizado aqui, 259</li>
+                </ul>
+            </article>
+            </div>
+        </div>
+        <div class="direitos-autorais">
+            <a href="https://github.com/brandoline" target="_blank"><span>© Desenvolvido por Helen Brandão.</span></a>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            }
+        });
+        }, { threshold: 0.12 });
+    
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
